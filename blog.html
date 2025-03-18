@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <style>@import url(https://fonts.googleapis.com/css?family=Roboto);
+        /*Just the background stuff*/
+        span.s1 {
+          position: fixed;
+          top: 0;
+          font-size: 15rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: #3C4447;
+          z-index: -1;
+        }
+        
+        span.s2 {
+          font-weight: 800;
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          font-size: 15rem;
+          text-transform: uppercase;
+          color: #3C4447;
+          z-index: -1;
+        }
+        
+        /*My hum... body.. yeah..*/
+        body {
+          background-color: #353B3F;
+          font-family: "Roboto", sans-serif;
+        }
+        
+        /* The card */
+        .card {
+          position: relative;
+          height: 450px;
+          width: 900px;
+          margin: 130px auto;
+          background-color: #FFF;
+          -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+        }
+        
+        /* Image on the left side */
+        .thumbnail {
+          float: left;
+          position: relative;
+          left: 30px;
+          top: -30px;
+          height: 320px;
+          width: 530px;
+          -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+          overflow: hidden;
+        }
+        
+        /*object-fit: cover;*/
+        /*object-position: center;*/
+        img.left {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          height: auto;
+          width: 100%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+        
+        /* Right side of the card */
+        .right {
+          margin-left: 590px;
+          margin-right: 20px;
+        }
+        
+        h1 {
+          padding-top: 15px;
+          font-size: 1.3rem;
+          color: #4B4B4B;
+        }
+        
+        .author {
+          background-color: #9ECAFF;
+          height: 30px;
+          width: 110px;
+          border-radius: 20px;
+           }
+        
+        .author > img {
+          padding-top: 5px;
+          margin-left: 10px;
+          float: left;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+        }
+        
+        h2 {
+          padding-top: 8px;
+          margin-right: 6px;
+          text-align:center;
+          font-size: 0.8rem;
+        }
+        .separator {
+          margin-top: 10px;
+          border: 1px solid #C3C3C3;
+        }
+        
+       .separator p {
+          text-align: justify;
+          padding-top: 10px;
+          font-size: 0.95rem;
+          line-height: 150%;
+          color: #4B4B4B;
+        }
+        
+        /* DATE of release*/
+        h5 {
+          position: absolute;
+          left: 30px;
+          margin-top: 5px;
+          font-size: 6rem;
+          color: #C3C3C3;
+        }
+        
+        h6 {
+          position: absolute;
+          left: 30px;
+          margin-top: 100px;
+          font-size: 2rem;
+          color: #C3C3C3;
+        }
+        
+        /* Those futur buttons */
+        /* ul {
+          margin-left: 250px;
+        }
+         */
+        /* li {
+          display: inline;
+          list-style: none;
+          padding-right: 40px;
+          color: #7B7B7B;
+        } */
+        
+        /* Floating action button */
+        .fab {
+          position: absolute;
+          right: 50px;
+          bottom: -40px;
+          box-sizing: border-box;
+          padding-top: 18px;
+          background-color: #1875D0;
+          width: 80px;
+          height: 80px;
+          color: white;
+          text-align: center;
+          border-radius: 50%;
+          -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+        }</style>
+        <link rel="stylesheet" href="style.css">
+         <header class="navbar">
+          <!-- <div class="logo">Suvidha</div> -->
+          <div class="logo">
+            <img src="suvidha-removebg-preview.png" alt="Suvidha Logo">
+          </div>
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html">About</a>
+            <!-- <a href="#services">Services</a> -->
+            <!-- <a href="#how-it-works">How It Works</a> -->
+            <!-- <a href="#contact">Contact</a> -->
+            <a href="blog.html">Blog</a>
+            <button class="cta-btn">Join Waitlist</button>
+          </nav>
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </header>
+    <div class="fond"> <span class="s1">blog </span><span class="s2">suvidha</span></div>
+    <div class="card">
+      <div class="thumbnail"><img class="left" src="https://www.teneric.co.uk/wp-content/uploads/2019/09/iStock-975599170-1024x683.jpg"/></div>
+      <div class="right">
+        <h1>Suvidha: Simplifying Financial Services for NRIs</h1>
+        <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
+          <h2>Gaurav R</h2>
+        </div>
+        <div class="separator"></div>
+        <p>Managing finances across borders can be a complex task for Non-Resident Indians (NRIs). From tax planning to investment management, NRIs often struggle to find reliable financial solutions. This is where Suvidha steps in—bridging the gap between clients and expert agents in the NRI financial services sector</p>
+      </div>
+      <h5>12</h5>
+      <h6>JANUARY</h6>
+      <ul>
+        <!-- <li><i class="fa fa-eye fa-2x"></i></li>
+        <li><i class="fa fa-heart-o fa-2x"></i></li>
+        <li><i class="fa fa-envelope-o fa-2x"></i></li>
+        <li><i class="fa fa-share-alt fa-2x"></i></li> -->
+      </ul>
+      <!-- <div class="fab"><i class="fa fa-arrow-down fa-3x"></i></div> -->
+    </div> 
+    
+    <div class="card">
+        <div class="thumbnail"><img class="left" src="https://www.teneric.co.uk/wp-content/uploads/2019/09/iStock-975599170-1024x683.jpg"/></div>
+        <div class="right">
+          <h1>Mastering Personal Finance: A Guide to Financial Freedom</h1>
+          <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
+            <h2>Gaurav R</h2>
+          </div>
+          <div class="separator"></div>
+          <p>In today's fast-paced world, managing finances wisely is key to long-term stability and wealth creation. Whether you're a student, a working professional, or an entrepreneur, financial literacy is essential to securing your future </p>
+        </div>
+        <h5>10</h5>
+        <h6>JANUARY</h6>
+        <ul>
+          <!-- <li><i class="fa fa-eye fa-2x"></i></li>
+          <li><i class="fa fa-heart-o fa-2x"></i></li>
+          <li><i class="fa fa-envelope-o fa-2x"></i></li>
+          <li><i class="fa fa-share-alt fa-2x"></i></li> -->
+        </ul>
+        <!-- <div class="fab"><i  class="fa fa-arrow-down fa-2x"> </i></div> -->
+      </div> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+  }
+
+  footer {
+    width: 100%;
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    color: #fff;
+    padding: 60px 10%;
+    border-top-left-radius: 80px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.email-id {
+    border-bottom: 1px solid blue;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 12px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #a1a1a2;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    color: #fff;
+}
+
+.social-icons .fa {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    transition: 0.3s;
+}
+
+.social-icons .fa:hover {
+    background: #fff;
+    color: #000;
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.newsletter input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ccc;
+    padding: 8px;
+   
+}
+
+.newsletter button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.newsletter button i {
+    font-size: 18px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .row {
+        /* flex-direction: column; */
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+</style>
+<section >
+<footer>
+  <div class="row">
+      <div class="col">
+          <img src="suvidha-removebg-preview.png" class="logo" alt="Logo">
+          <p>Bringing financial solutions to NRIs worldwide. Connecting clients with the best financial experts.</p>
+      </div>
+      <div  class="col">
+          <h3>Office</h3>
+          <p>123 Business Road</p>
+          <p>Mumbai, India</p>
+          <p class="email-id">contact@suvidha.com</p>
+          <p>Phone: +91 876986997</p>
+      </div>
+      <div class="col">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">Blog</a></li>
+          </ul>
+      </div>
+      <div class="col">
+          <h3>Newsletter</h3>
+          <div class="newsletter">
+              <input type="email" placeholder="Enter your email id" required>
+              <button type="submit"><i class="fa fa-arrow-right"></i></button>
+          </div>
+          <div class="social-icons">
+              <i class="fa fa-youtube"></i>
+              <i class="fa fa-linkedin"></i>
+              <i class="fa fa-whatsapp"></i>
+          </div>
+      </div>
+  </div>
+</footer>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+   
+        <header>
+  <div class="navbar">
+    <!-- <div class="logo">Suvidha</div> -->
+    <div class="logo">
+      <img src="suvidha-removebg-preview.png" alt="Suvidha Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html">About</a>
+      <!-- <a href="#services">Services</a> -->
+      <!-- <a href="#how-it-works">How It Works</a> -->
+      <!-- <a href="#contact">Contact</a> -->
+      <a href="blog.html">Blog</a>
+      <button class="cta-btn">Join Waitlist</button>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div></header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Making Services Simple 
+        For Indians Abroad</h1>
+      <p>A seamless platform bridging NRIs and financial advisors for secure investments, banking, and wealth
+        management.</p>
+      <div class="hero-buttons">
+        <a href="#" class="cta-button">Get Started</a>
+        <a href="#" class="secondary-button">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="text">
+      <span>discover</span>
+      <h1>One-Stop Destination for</h1>
+      <hr>
+      <p>Beauty and mystery are hidden under the sea. Explore with our application to know about Aquatic Animals.</p>
+      <a href="about.html">know more</a>
+      <div class="button-container">
+        <button style="margin-left:20px; margin-top: 40px;" class="arrow" onclick="scrollCarousel(-1)">&#10094;</button>
+        <button style="margin-left: 10px;" class="arrow" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+    </div>
+ 
+ 
+     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            margin-top: 50px;
+            margin-right:0;
+        }
+
+        .conteudo {
+            width: 80%;
+            max-width: 950px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carrousel {
+            display: flex;
+            gap: 1.2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            padding: 10px;
+        }
+
+        .carrousel::-webkit-scrollbar {
+            display: none;
+        }
+        .scard {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(15px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          min-height: 560px;
+          min-width: 340px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .scard img {
+          width: 100%;
+          border-radius: 10px;
+      }
+      .scard-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          flex-grow: 1;
+      }
+      .scard h2 {
+        margin-top: auto;
+          /* margin: 15px 0 10px; */
+          font-size: 28px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+      }
+      .scard p {
+          font-size: 18px;
+          color: rgba(106, 94, 94, 0.915);
+      }
+      .button-container {
+          /* margin-top: auto; */
+          padding-top: 15px;
+      }
+      .get-started {
+          text-decoration: none;
+          padding: 10px 20px;
+          border-radius: 25px;
+          font-size: 14px;
+          font-weight: bold;
+          text-transform: uppercase;
+          background: #00bfff;
+          color: white;
+          transition: 0.3s;
+      }
+      .get-started:hover {
+          background: #008ecc;
+      }
+      .scard:hover {
+            transform: scale(1.02);
+        }
+        /* .card {
+            scroll-snap-align: start;
+            border-radius: 20px;
+            min-height: 450px;
+            min-width: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            
+            background: rgba(255, 255, 255, 0.381);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h1 {
+            font-size: 24px;
+            color: #333;
+        } */
+
+        /* .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: -40px;
+        }
+
+        .next {
+            right: -40px;
+        } */
+        .arrow {
+        /* margin: 20px; */
+        background-color: #e0e0e0;
+        border: none;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        transition: background 0.3s;
+    }
+
+    .arrow:hover {
+        background-color: #c0c0c0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="conteudo">
+            <!-- <button class="arrow prev" onclick="scrollCarousel(-1)">&#10094;</button> -->
+            <div class="carrousel" id="carousel">
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="h4kEQomVJKqTDqhf-generated_image[1].jpg" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>Investment advisors</h2>
+                            <p>Smart Investments, Zero Risks Vetted advisors for repatriation-friendly portfolios. Your financial safety is our priority</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="2spoCO8sMCO8lCfg-generated_image[1].jpg" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>Tax <br>consultants</h2>
+                            <p>End Tax Filing Headaches <br>Certified experts for DTAA, TDS refunds, and GIFT City compliance. Transparent pricing.</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="pIKMUm0c4vkEeY1f-generated_image[1].jpg" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>Legal <br>experts</h2>
+                            <p>Resolve Property Disputes Confidently Verified lawyers specializing in NRI inheritance, land disputes, and legal compliance</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="h4kEQomVJKqTDqhf-generated_image[1].jpg" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>Investment <br> advisors</h2>
+                            <p>Smart Investments, Zero Risks
+                                Vetted advisors for repatriation-friendly portfolios. Your financial safety is our priority</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="2spoCO8sMCO8lCfg-generated_image[1].jpg" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>Tax <br>consultants</h2>
+                            <p>End Tax Filing Headaches <br>Certified experts for DTAA, TDS refunds, and GIFT City compliance. Transparent pricing.</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="pIKMUm0c4vkEeY1f-generated_image[1].jpg" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>Legal <br> experts</h2>
+                            <p>Resolve Property Disputes Confidently Verified lawyers specializing in NRI inheritance, land disputes, and legal compliance</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="https://th.bing.com/th/id/OIP.7oaCNlR-LfSYSS0gqeLqbgHaHa?w=626&h=626&rs=1&pid=ImgDetMain" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>TOYOTA SUPRA</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="https://th.bing.com/th/id/OIP.7oaCNlR-LfSYSS0gqeLqbgHaHa?w=626&h=626&rs=1&pid=ImgDetMain" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>TOYOTA SUPRA</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" onclick="scrollToCard(this)">
+                    <div class="scard">
+                        <img src="https://th.bing.com/th/id/OIP.7oaCNlR-LfSYSS0gqeLqbgHaHa?w=626&h=626&rs=1&pid=ImgDetMain" alt="Toyota Supra">
+                        <div class="scard-content">
+                            <h2>TOYOTA SUPRA</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="button-container">
+                                <a href="#" class="get-started">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </article> -->
+            </div>
+            <!-- <button class="arrow next" onclick="scrollCarousel(1)">&#10095;</button> -->
+        </div>
+      </div>
+        
+   
+
+    <script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carousel");
+    const cards = Array.from(document.querySelectorAll(".card"));
+    const cardWidth = cards[0].offsetWidth + 20; // Include gap
+    let currentIndex = 0;
+
+    function scrollCarousel(direction) {
+        const totalCards = cards.length;
+        currentIndex += direction;
+
+        if (currentIndex >= totalCards) {
+            currentIndex = 0; // Loop back to the first card
+        } else if (currentIndex < 0) {
+            currentIndex = totalCards - 1; // Loop to the last card
+        }
+
+        const newScrollLeft = currentIndex * cardWidth;
+        carousel.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
+    }
+
+    window.scrollCarousel = scrollCarousel;
+});
+// function scrollCarousel(direction) {
+//             const carousel = document.getElementById("carousel");
+//             const cardWidth = document.querySelector(".card").offsetWidth + 20; // Include gap
+//             carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+//         }
+
+//         function scrollToCard(card) {
+//             const carousel = document.getElementById("carousel");
+//             const cardLeft = card.offsetLeft - carousel.offsetLeft;
+//             carousel.scrollTo({ left: cardLeft, behavior: 'smooth' });
+//         }
+    </script>
+  </main>
+  <style>@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+    }
+    
+    main {
+      position: relative;
+      width: calc(min(90rem, 90%));
+      margin: 0 auto;
+      min-height: 100vh;
+      column-gap: 3rem;
+      padding-block: min(20vh, 3rem);
+    }
+    
+    .bg {
+      position: fixed;
+      top: -4rem;
+      left: -12rem;
+      z-index: -1;
+      opacity: 0;
+    }
+    
+    .bg2 {
+      position: fixed;
+      bottom: -2rem;
+      right: -3rem;
+      z-index: -1;
+      width: 9.375rem;
+      opacity: 0;
+    }
+    main> .text{
+      max-width: 70%;
+    }
+    main > .text span {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 1rem;
+      color: #717171;
+    }
+    
+    main > .text h1 {
+      text-transform: capitalize;
+      letter-spacing: 0.8px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);
+      background-color: #005baa;
+      background-image: linear-gradient(45deg, #005baa, #000000);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+    }
+    
+    main > .text hr {
+      display: block;
+      background: #005baa;
+      height: 0.25rem;
+      width: 6.25rem;
+      border: none;
+      margin: 1.125rem 0 1.875rem 0;
+    }
+    
+    main > .text p {
+      line-height: 1.6;
+    }
+    
+    main a {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #717171;
+      font-weight: 500;
+      background: #fff;
+      border-radius: 3.125rem;
+      transition: 0.3s ease-in-out;
+    }
+    
+    main > .text > a {
+      border: 2px solid #c2c2c2;
+      margin-top: 2.188rem;
+      padding: 0.625rem 1.875rem;
+    }
+    
+    main > .text > a:hover {
+      border: 0.125rem solid #005baa;
+      color: #005baa;
+    }
+    
+    
+    
+    @media screen and (min-width: 48rem) {
+      main {
+        display: flex;
+        align-items: center;
+        
+      }
+      .bg,
+      .bg2 {
+        opacity: 0.1;
+      }
+    }
+    </style>
+ 
+  <!-- faq section -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+    
+    .faq-section {
+        font-family: 'Inter', sans-serif;
+        background: #f5f7fa;
+        color: #2c3e50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        margin: 0;
+        padding: 20px;
+        border-bottom-right-radius: 80px;
+    }
+    h2 {
+        color: #0a66c2;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .accordion {
+        width: 100%;
+        max-width: 600px;
+    }
+    .accordion-item {
+        border-bottom: 1px solid #d1dce5;
+        padding: 10px 0;
+    }
+    .accordion-button {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        position: relative;
+        color: #34495e;
+        transition: color 0.3s ease;
+    }
+    .accordion-button:hover {
+        color: #0a66c2;
+    }
+    .accordion-button::after {
+        content: '+';
+        position: absolute;
+        right: 10px;
+        font-size: 1.5rem;
+        color: #0a66c2;
+    }
+    .accordion-button.active::after {
+        content: '-';
+    }
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 0 15px;
+        color: #555;
+    }
+    .accordion-content p {
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+    .ask-query {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .ask-query a {
+            color: #0a66c2;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .ask-query a:hover {
+            text-decoration: underline;
+        }
+</style>
+</head>
+<body>\
+  <section style="background: #000000;">
+<div class="faq-section">
+    <div>
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-button"> What is Suvidha?</button>
+                <div class="accordion-content">
+                    <p>Suvidha is a platform where we connect Non-Resident Indians (NRIs) to Verified Service providers/ Professionals from different industries, e.g., Tax Experts, Legal Experts, Investment Advisors, Property managers, and many more.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">How Suvidha Works?</button>
+                <div class="accordion-content">
+                    <p>Tell us your requirements (e.g., property dispute, tax filing, investment advice). Our AI-powered system matches you with the best-suited professional from our pre-vetted network. Review the expert’s profile, credentials, and pricing. Then, connect and discuss your case. Once your service is delivered, review the expert and provide feedback.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button"> Is Suvidha Legit?</button>
+                <div class="accordion-content">
+                    <p><a style="font-weight:bold;">Yes.</a> Here’s why NRIs trust us:<br>
+
+                        <a style="font-weight:bold;">Verified Professionals:</a> Background-checked experts only.<br>
+                        <a style="font-weight:bold;">No Hidden Costs: </a>Clear pricing.<br>
+                        <a style="font-weight:bold;">Guaranteed Support:</a> 7-day resolution policy.
+                        </p>
+                </div>
+            </div>
+            <div class="ask-query">
+              <p>Still can't find an answer to your query? <a href="#">Ask us!</a></p>
+          </div>
+        </div>
+    </div>
+</div>
+</section>
+<script>
+    document.querySelectorAll(".accordion-button").forEach(button => {
+            button.addEventListener("click", () => {
+                const accordion = button.parentElement.parentElement;
+                accordion.querySelectorAll(".accordion-button").forEach(item => {
+                    if (item !== button) {
+                        item.classList.remove("active");
+                        item.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                button.classList.toggle("active");
+                const content = button.nextElementSibling;
+                content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+            });
+        });
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+  }
+
+  footer {
+      width: 100%;
+      background: linear-gradient(to right, #00093c, #2d0b00);
+      color: #fff;
+      padding: 60px 10%;
+      border-top-left-radius: 80px;
+      font-size: 14px;
+      line-height: 24px;
+  }
+
+  .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+
+  .col {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 20px;
+  }
+
+  .logo {
+      height: 40px;
+      margin-bottom: 20px;
+  }
+
+  .col h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      position: relative;
+  }
+
+  .email-id {
+      border-bottom: 1px solid blue;
+      display: inline-block;
+      padding-bottom: 5px;
+  }
+
+  ul {
+      list-style: none;
+  }
+
+  ul li {
+      margin-bottom: 12px;
+  }
+
+  ul li a {
+      text-decoration: none;
+      color: #a1a1a2;
+      transition: 0.3s;
+  }
+
+  ul li a:hover {
+      color: #fff;
+  }
+
+  .social-icons .fa {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+      margin-right: 10px;
+      border: 1px solid #fff;
+      transition: 0.3s;
+  }
+
+  .social-icons .fa:hover {
+      background: #fff;
+      color: #000;
+  }
+
+  .newsletter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+  }
+
+  .newsletter input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #ccc;
+      padding: 8px;
+     
+  }
+
+  .newsletter button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+  }
+
+  .newsletter button i {
+      font-size: 18px;
+      color: #ccc;
+  }
+
+  @media (max-width: 768px) {
+      .row {
+          /* flex-direction: column; */
+          text-align: center;
+      }
+      .social-icons {
+          justify-content: center;
+          margin-top: 20px;
+      }
+  }
+</style>
+<section style="  background: #f5f7fa;">
+<footer>
+  <div class="row">
+      <div class="col">
+          <img src="suvidha-removebg-preview.png" class="logo" alt="Logo">
+          <p>Bringing financial solutions to NRIs worldwide. Connecting clients with the best financial experts.</p>
+      </div>
+      <div style="margin-left: 20px;" class="col">
+          <h3>Office</h3>
+          <p>123 Business Road</p>
+          <p>Mumbai, India</p>
+          <p class="email-id">contact@suvidha.com</p>
+          <p>Phone: +91 876986997</p>
+      </div>
+      <div class="col">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">Blog</a></li>
+          </ul>
+      </div>
+      <div class="col">
+          <h3>Newsletter</h3>
+          <div class="newsletter">
+              <input type="email" placeholder="Enter your email id" required>
+              <button type="submit"><i class="fa fa-arrow-right"></i></button>
+          </div>
+          <div class="social-icons">
+              <i class="fa fa-youtube"></i>
+              <i class="fa fa-linkedin"></i>
+              <i class="fa fa-whatsapp"></i>
+          </div>
+      </div>
+  </div>
+</footer>
+</section>
+</body>
+<script src="script.js"></script>
+
+</html>

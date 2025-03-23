@@ -87,7 +87,14 @@
             scroll-behavior: smooth;
             padding: 10px;
         }
-
+@media (max-width: 768px) {
+        .conteudo{
+            width: 100%;
+        }
+        }
+        @media (max-width: 768px) {
+        .carrousel{ padding: 0px;}
+        }
         .carrousel::-webkit-scrollbar {
             display: none;
         }
@@ -407,7 +414,7 @@
       opacity: 0;
     }
     main> .text{
-      max-width: 70%;
+      max-width: fit-content;
     }
     main > .text span {
       text-transform: uppercase;
